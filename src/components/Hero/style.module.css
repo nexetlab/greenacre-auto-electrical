@@ -1,83 +1,218 @@
 .hero {
   position: relative;
   height: 100vh;
-  min-height: 600px;
+  min-height: 800px;
   display: flex;
   align-items: center;
   overflow: hidden;
+  color: white;
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  z-index: -2;
+}
+
+.heroBackground::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+.heroContainer {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .heroContent {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  color: var(--white);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .heroTitle {
-  font-size: 3rem;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1.1;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: transparent;
+  background: linear-gradient(to right, #ffffff, #c2c2c2);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.titleLine {
+  display: block;
 }
 
 .heroSubtitle {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-family: 'Urbanist', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  max-width: 600px;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .heroButtons {
   display: flex;
   gap: 20px;
+  margin-bottom: 60px;
 }
 
 .heroBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 30px;
+  border-radius: 50px;
   font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.heroOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 1;
+.primaryBtn {
+  background: var(--primary-blue);
+  color: white;
 }
 
-.heroImage {
+.secondaryBtn {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btnIcon {
+  font-size: 1.2rem;
+}
+
+.serviceIcons {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.serviceIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: default;
+}
+
+.iconWrapper {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  color: var(--primary-blue);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.scrollIndicator {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .heroTitle {
+    font-size: 4rem;
+  }
 }
 
 @media (max-width: 992px) {
   .heroTitle {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.3rem;
   }
 }
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 500px;
+    min-height: 700px;
+    text-align: center;
   }
   
   .heroTitle {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   
   .heroSubtitle {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .heroButtons {
     flex-direction: column;
     gap: 15px;
+    margin-bottom: 40px;
+  }
+  
+  .serviceIcons {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .serviceIcon {
+    width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+  
+  .heroBtn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .iconWrapper {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
   }
 }
