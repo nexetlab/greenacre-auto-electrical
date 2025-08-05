@@ -11,6 +11,22 @@ const Hero = () => {
     { icon: <FaSprayCan />, name: 'Protection' }
   ];
 
+  // Smooth scroll function
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
+  // Handle scroll indicator click
+  const handleScrollDown = () => {
+    scrollToSection('services');
+  };
+
   return (
     <section id="home" className={styles.hero}>
       {/* Background with gradient overlay */}
@@ -48,24 +64,24 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <motion.a
-              href="#contact"
+            <motion.button
+              onClick={() => scrollToSection('contact')}
               className={`${styles.heroBtn} ${styles.primaryBtn}`}
               whileHover={{ y: -3, boxShadow: '0 10px 20px rgba(26, 115, 232, 0.3)' }}
               whileTap={{ scale: 0.95 }}
             >
               <FaCalendarAlt className={styles.btnIcon} />
               Book an Appointment
-            </motion.a>
-            <motion.a
-              href="#services"
+            </motion.button>
+            <motion.button
+              onClick={() => scrollToSection('services')}
               className={`${styles.heroBtn} ${styles.secondaryBtn}`}
               whileHover={{ y: -3, boxShadow: '0 10px 20px rgba(255, 255, 255, 0.1)' }}
               whileTap={{ scale: 0.95 }}
             >
               <FaTools className={styles.btnIcon} />
               Explore Our Services
-            </motion.a>
+            </motion.button>
           </motion.div>
 
           {/* Service icons */}
@@ -95,6 +111,8 @@ const Hero = () => {
         className={styles.scrollIndicator}
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
+        onClick={handleScrollDown}
+        style={{ cursor: 'pointer' }}
       >
         <FaChevronDown />
       </motion.div>
