@@ -6,12 +6,11 @@ import styles from './style.module.css';
 const Hero = () => {
   const services = [
     { icon: <FaCarSide />, name: 'Detailing' },
-    { icon: <FaGaugeHigh />, name: 'Performance' },
-    { icon: <FaOilCan />, name: 'Maintenance' },
-    { icon: <FaSprayCan />, name: 'Protection' }
+    { icon: <FaGaugeHigh />, name: 'Diagnostics' },
+    { icon: <FaOilCan />, name: 'Repairs' },
+    { icon: <FaSprayCan />, name: 'Maintenance' }
   ];
 
-  // Smooth scroll function
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -22,39 +21,60 @@ const Hero = () => {
     }
   };
 
-  // Handle scroll indicator click
-  const handleScrollDown = () => {
-    scrollToSection('services');
+  // Single scroll handler for the arrow - tries services section first, then fallback to viewport scroll
+  const handleArrowClick = () => {
+    const servicesElement = document.getElementById('services');
+    if (servicesElement) {
+      // If services section exists, scroll to it
+      servicesElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    } else {
+      // Fallback: scroll down by one viewport height
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: 'smooth',
+      });
+    }
   };
 
   return (
     <section id="home" className={styles.hero}>
-      {/* Background with gradient overlay */}
+      {/* Background */}
       <div className={styles.heroBackground}></div>
-      
+
       <div className={`container ${styles.heroContainer}`}>
         <div className={styles.heroContent}>
-          {/* Animated headline */}
-          <motion.div
+
+          {/* Motto */}
+          <motion.p
+            className={styles.heroMotto}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            Driven by Trust. Powered by Precision.
+          </motion.p>
+
+          {/* Headline */}
+          <motion.h1
+            className={styles.heroTitle}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h1 className={styles.heroTitle}>
-              <span className={styles.titleLine}>Precision.</span>
-              <span className={styles.titleLine}>Performance.</span>
-              <span className={styles.titleLine}>Perfection.</span>
-            </h1>
-          </motion.div>
+            Greenacre Auto Electrical
+          </motion.h1>
 
-          {/* Tagline */}
+          {/* Short Description */}
           <motion.p
             className={styles.heroSubtitle}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
           >
-            We bring Formula 1 standards to your driveway.
+            Reliable diagnostics, repairs, and maintenance for all vehicles. Trusted by locals, powered by years of hands-on experience.
           </motion.p>
 
           {/* CTAs */}
@@ -62,7 +82,7 @@ const Hero = () => {
             className={styles.heroButtons}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
           >
             <motion.button
               onClick={() => scrollToSection('contact')}
@@ -84,12 +104,12 @@ const Hero = () => {
             </motion.button>
           </motion.div>
 
-          {/* Service icons */}
+          {/* Services Icons */}
           <motion.div
             className={styles.serviceIcons}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
           >
             {services.map((service, index) => (
               <motion.div
@@ -106,15 +126,17 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll Indicator - Fixed with single click handler */}
       <motion.div
         className={styles.scrollIndicator}
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
-        onClick={handleScrollDown}
+        onClick={handleArrowClick}
         style={{ cursor: 'pointer' }}
       >
-        <FaChevronDown />
+        <div className={styles.arrow}>
+          <FaChevronDown />
+        </div>
       </motion.div>
     </section>
   );

@@ -34,13 +34,13 @@ const Footer = () => {
                 <div className={styles.contactIcon}>
                   <FaMapMarkerAlt />
                 </div>
-                <span>Sydney, NSW</span>
+                <span>81 Beresford Ave, Greenacre NSW 2190, Australia</span>
               </div>
               <div className={styles.contactItem}>
                 <div className={styles.contactIcon}>
                   <FaPhone />
                 </div>
-                <a href="tel:97905361" className={styles.contactLink}>9790 5361</a>
+                <a href="tel:0297905361" className={styles.contactLink}>029790 5361</a>
               </div>
               <div className={styles.contactItem}>
                 <div className={styles.contactIcon}>

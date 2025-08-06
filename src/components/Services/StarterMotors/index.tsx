@@ -34,7 +34,7 @@ const StarterMotorsPage = () => {
 
             <div className={styles.imageContent}>
               <img 
-                src="/images/starter-motor-shelf.jpg" 
+                src="/images/starter-moto-service.png" 
                 alt="Our starter motor inventory" 
                 className={styles.serviceImage}
               />

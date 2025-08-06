@@ -46,6 +46,15 @@
   padding: 0 20px;
 }
 
+.heroMotto {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 10px;
+}
+
 .heroTitle {
   font-family: 'Orbitron', sans-serif;
   font-size: 5rem;
@@ -181,6 +190,11 @@
     font-size: 1.1rem;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .heroMotto {
+    font-size: 1rem;
+    margin-bottom: 8px;
   }
   
   .heroButtons {

@@ -112,7 +112,7 @@ const LocationMap = () => {
                 <FaMapMarkerAlt className={styles.addressIcon} />
                 <div className={styles.addressText}>
                   <span className={styles.addressLabel}>Our Address</span>
-                  <span className={styles.addressValue}>Sydney, NSW</span>
+                  <span className={styles.addressValue}>81 Beresford Ave, Greenacre NSW 2190, Australia</span>
                 </div>
               </div>
             </motion.div>

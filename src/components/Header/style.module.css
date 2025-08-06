@@ -185,22 +185,31 @@
   box-shadow: 0 4px 15px rgba(26, 115, 232, 0.4);
 }
 
-/* Mobile Toggle */
+/* Mobile Toggle Button */
 .mobileToggle {
   display: none;
   background: rgba(26, 115, 232, 0.1);
   border: 1px solid rgba(26, 115, 232, 0.3);
   color: var(--white);
-  padding: 0.5rem;
+  padding: 0.6rem;
   border-radius: 8px;
-  font-size: 1.5rem;
   cursor: pointer;
   transition: var(--transition);
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
 }
 
 .mobileToggle:hover {
   background: rgba(26, 115, 232, 0.2);
-  transform: scale(1.05);
+  border-color: rgba(26, 115, 232, 0.5);
+}
+
+.mobileToggle svg {
+  width: 24px;
+  height: 24px;
+  color: var(--white);
 }
 
 /* Mobile Menu */
@@ -214,15 +223,47 @@
   background: rgba(0, 0, 0, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  padding: 6rem 2rem 2rem;
+  padding: 2rem;
   border-left: 1px solid rgba(26, 115, 232, 0.2);
   z-index: 999;
+}
+
+/* Close button inside mobile menu */
+.mobileCloseButton {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(26, 115, 232, 0.1);
+  border: 1px solid rgba(26, 115, 232, 0.3);
+  color: var(--white);
+  padding: 0.6rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobileCloseButton:hover {
+  background: rgba(26, 115, 232, 0.2);
+  border-color: rgba(26, 115, 232, 0.5);
+  transform: scale(1.05);
+}
+
+.mobileCloseButton svg {
+  width: 20px;
+  height: 20px;
+  color: var(--white);
 }
 
 .mobileNavList {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  margin-top: 4rem;
 }
 
 .mobileNavItem,
@@ -301,12 +342,15 @@
 }
 
 @media (max-width: 768px) {
+  /* Hide desktop nav and show mobile toggle */
   .desktopNav {
     display: none;
   }
   
   .mobileToggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .container {
@@ -362,5 +406,16 @@
   
   .mobileMenu {
     width: 90%;
+  }
+  
+  .mobileToggle {
+    width: 44px;
+    height: 44px;
+    padding: 0.5rem;
+  }
+  
+  .toggleIcon svg {
+    width: 22px;
+    height: 22px;
   }
 }

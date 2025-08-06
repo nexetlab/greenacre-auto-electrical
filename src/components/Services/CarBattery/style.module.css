@@ -191,7 +191,7 @@
 
 /* Hover text overlay */
 .imageContent::after {
-  content: 'Professional A/C Service';
+  content: 'Professional Battery Service';
   position: absolute;
   top: 50%;
   left: 50%;

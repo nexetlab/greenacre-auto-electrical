@@ -161,13 +161,13 @@ const Header = () => {
           </motion.div>
         </div>
 
-        {/* Mobile Menu Toggle */}
+        {/* Mobile Menu Toggle - Only hamburger icon */}
         <button
           className={styles.mobileToggle}
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
-          {isMenuOpen ? <FaTimes /> : <HiOutlineMenuAlt3 />}
+          <HiOutlineMenuAlt3 />
         </button>
 
         {/* Mobile Menu */}
@@ -180,6 +180,19 @@ const Header = () => {
               exit={{ opacity: 0, x: '100%' }}
               transition={{ type: 'tween', duration: 0.3 }}
             >
+              {/* Close button inside the menu */}
+              <motion.button
+                className={styles.mobileCloseButton}
+                onClick={toggleMenu}
+                aria-label="Close menu"
+                initial={{ opacity: 0, rotate: 90 }}
+                animate={{ opacity: 1, rotate: 0 }}
+                exit={{ opacity: 0, rotate: -90 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
+              >
+                <FaTimes />
+              </motion.button>
+
               <div className={styles.mobileNavList}>
                 {navItems.map((item, index) => (
                   <motion.div
@@ -187,7 +200,7 @@ const Header = () => {
                     className={styles.mobileNavItem}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 + 0.2 }}
                   >
                     {isHomePage ? (
                       <ScrollLink
@@ -217,7 +230,7 @@ const Header = () => {
                   className={styles.mobileCtaItem}
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: 0.4 }}
+                  transition={{ duration: 0.3, delay: 0.6 }}
                 >
                   <a
                     href="tel:97905361"

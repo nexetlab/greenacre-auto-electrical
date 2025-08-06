@@ -7,6 +7,9 @@ import LocationMap from './components/Location';
 import ScrollToTop from './components/ScrollToTop';
 import '@/styles/global.css';
 
+import CarServicingPage from './components/Services/CarService';
+import PinkSlipInspectionPage from './components/Services/PinkSlip';
+
 // Main sections
 const Hero = lazy(() => import('@/components/Hero'));
 const Services = lazy(() => import('@/components/Services'));
@@ -19,7 +22,6 @@ const AlternatorsPage = lazy(() => import('@/components/Services/Alternators'));
 const StarterMotorsPage = lazy(() => import('@/components/Services/StarterMotors'));
 const CarBatteryPage = lazy(() => import('@/components/Services/CarBattery'));
 const AirConditioningPage = lazy(() => import('@/components/Services/AirConditioning'));
-const BreakdownServicePage = lazy(() => import('@/components/Services/BreakdownService'));
 const AirbagServicePage = lazy(() => import('@/components/Services/AirbagService'));
 
 function App() {
@@ -63,8 +65,9 @@ function App() {
               <Route path="/services/starter-motors" element={<StarterMotorsPage />} />
               <Route path="/services/battery-service" element={<CarBatteryPage />} />
               <Route path="/services/air-conditioning" element={<AirConditioningPage />} />
-              <Route path="/services/breakdown-service" element={<BreakdownServicePage />} />
               <Route path="/services/airbag-service" element={<AirbagServicePage />} />
+              <Route path="/services/car-servicing" element={<CarServicingPage />} />
+              <Route path="/services/pink-slip-inspection" element={<PinkSlipInspectionPage />} />
             </Routes>
           </Suspense>
         </main>

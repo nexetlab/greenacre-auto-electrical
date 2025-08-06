@@ -50,14 +50,14 @@ const ContactForm = () => {
   const contactItems = [
     {
       icon: <FaMapMarkerAlt />,
-      text: 'Sydney, NSW',
+      text: '81 Beresford Ave, Greenacre NSW 2190, Australia',
       type: 'address'
     },
     {
       icon: <FaPhone />,
-      text: '9790 5361',
+      text: '029790 5361',
       type: 'phone',
-      href: 'tel:97905361'
+      href: 'tel:0297905361'
     },
     {
       icon: <FaEnvelope />,

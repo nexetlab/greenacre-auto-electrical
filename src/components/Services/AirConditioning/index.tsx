@@ -38,7 +38,7 @@ const AirConditioningPage = () => {
 
             <div className={styles.imageContent}>
               <img 
-                src="/images/ac-service.jpg" 
+                src="/images/ac-service-in.png" 
                 alt="A/C service in progress" 
                 className={styles.serviceImage}
               />

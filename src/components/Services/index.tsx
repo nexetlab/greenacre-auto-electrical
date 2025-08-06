@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import styles from './style.module.css';
+import { FaClipboardCheck } from 'react-icons/fa';
+
+
 import { 
   FaOilCan, 
   FaCarBattery, 
@@ -43,11 +46,11 @@ const Services = () => {
       image: '/images/ac-service.png'
     },
     {
-      id: 'breakdown-service',
-      title: '24/7 Breakdown Service',
-      description: 'Emergency assistance for battery, alternator, and starter motor issues anytime, anywhere.',
-      icon: <FaCarCrash />,
-      image: '/images/breakdown-service.png'
+      id: 'pink-slip-inspection',
+      title: 'Pink Slip Inspection',
+      description: 'Certified eSafety checks to keep your vehicle roadworthy. Fast, reliable, and fully compliant.',
+      icon: <FaClipboardCheck />,
+      image: '/images/pink-slip.jpg'
     },
     {
       id: 'airbag-service',
@@ -55,7 +58,15 @@ const Services = () => {
       description: 'Ensure safety with expert diagnostics and replacement of airbag systems.',
       icon: <FaCarAlt />,
       image: '/images/airbag-service.jpg'
+    },
+    {
+      id: 'car-servicing',
+      title: 'Comprehensive Car Servicing',
+      description: 'Regular servicing to keep your vehicle running smoothly and extend its lifespan. Includes oil changes, filter checks, and overall inspection.',
+      icon: <FaTools />,
+      image: '/images/car-servicing.jpg'
     }
+
   ];
 
   return (
