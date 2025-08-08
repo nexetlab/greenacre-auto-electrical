@@ -15,7 +15,7 @@ const AirbagServicePage = () => {
       <section className={styles.contentSection}>
         <div className="container">
           <h2>Professional Airbag System Services</h2>
-          <p>Call Us Today: <a href="tel:97905361">9790 5361</a></p>
+          <p>Call Us Today: <a href="tel:0297905361">029790 5361</a></p>
           <p>Email Us Today: <a href="mailto:greenacreautoelectrical@outlook.com">greenacreautoelectrical@outlook.com</a></p>
 
           <div className={styles.contentGrid}>
