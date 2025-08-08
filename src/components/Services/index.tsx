@@ -71,7 +71,7 @@ const Services = () => {
     {
       id: 'alternator-starter-refurbishment',
       title: 'Alternator & Starter Motor Refurbishment',
-      description: 'Expert refurbishment and reconditioning to restore performance and extend the lifespan of your vehicle’s alternator and starter motor.',
+      description: 'Expert refurbishment and reconditioning to restore performance and extend the lifespan of your Vehicle’s alternator and starter motor.',
       icon: <FaWrench />,
       image: '/images/motor_refurbishment.webp'
     }
