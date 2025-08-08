@@ -20,6 +20,13 @@ import { IoMdSpeedometer } from 'react-icons/io';
 const Services = () => {
   const services = [
     {
+      id: 'alternator-starter-refurbishment',
+      title: 'Alternator & Starter Motor Refurbishment',
+      description: 'Expert refurbishment and reconditioning to restore performance and extend the lifespan of your Vehicle’s alternator and starter motor.',
+      icon: <FaWrench />,
+      image: '/images/motor_refurbishment.webp'
+    },
+    {
       id: 'alternators',
       title: 'Alternators',
       description: 'Expert alternator repairs and replacements to keep your electrical system running smoothly.',
@@ -67,13 +74,6 @@ const Services = () => {
       description: 'Regular servicing to keep your vehicle running smoothly and extend its lifespan. Includes oil changes, filter checks, and overall inspection.',
       icon: <FaTools />,
       image: '/images/car-servicing.jpg'
-    },
-    {
-      id: 'alternator-starter-refurbishment',
-      title: 'Alternator & Starter Motor Refurbishment',
-      description: 'Expert refurbishment and reconditioning to restore performance and extend the lifespan of your Vehicle’s alternator and starter motor.',
-      icon: <FaWrench />,
-      image: '/images/motor_refurbishment.webp'
     }
 
 
