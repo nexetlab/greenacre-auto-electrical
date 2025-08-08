@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import styles from './style.module.css';
 import { FaClipboardCheck } from 'react-icons/fa';
+import { FaWrench } from 'react-icons/fa';
+
 
 
 import { 
@@ -65,7 +67,15 @@ const Services = () => {
       description: 'Regular servicing to keep your vehicle running smoothly and extend its lifespan. Includes oil changes, filter checks, and overall inspection.',
       icon: <FaTools />,
       image: '/images/car-servicing.jpg'
+    },
+    {
+      id: 'alternator-starter-refurbishment',
+      title: 'Alternator & Starter Motor Refurbishment',
+      description: 'Expert refurbishment and reconditioning to restore performance and extend the lifespan of your vehicle’s alternator and starter motor.',
+      icon: <FaWrench />,
+      image: '/images/motor_refurbishment.webp'
     }
+
 
   ];
 

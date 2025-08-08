@@ -9,6 +9,7 @@ import '@/styles/global.css';
 
 import CarServicingPage from './components/Services/CarService';
 import PinkSlipInspectionPage from './components/Services/PinkSlip';
+import AlternatorStarterPage from './components/Services/AlternatorStarterRefurbishment';
 
 // Main sections
 const Hero = lazy(() => import('@/components/Hero'));
@@ -68,6 +69,8 @@ function App() {
               <Route path="/services/airbag-service" element={<AirbagServicePage />} />
               <Route path="/services/car-servicing" element={<CarServicingPage />} />
               <Route path="/services/pink-slip-inspection" element={<PinkSlipInspectionPage />} />
+              <Route path="/services/alternator-starter-refurbishment" element={<AlternatorStarterPage />} />
+              
             </Routes>
           </Suspense>
         </main>

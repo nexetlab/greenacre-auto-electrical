@@ -4,12 +4,7 @@ import { FaCarSide, FaGaugeHigh, FaOilCan, FaSprayCan } from 'react-icons/fa6';
 import styles from './style.module.css';
 
 const Hero = () => {
-  const services = [
-    { icon: <FaCarSide />, name: 'Detailing' },
-    { icon: <FaGaugeHigh />, name: 'Diagnostics' },
-    { icon: <FaOilCan />, name: 'Repairs' },
-    { icon: <FaSprayCan />, name: 'Maintenance' }
-  ];
+  
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -102,26 +97,6 @@ const Hero = () => {
               <FaTools className={styles.btnIcon} />
               Explore Our Services
             </motion.button>
-          </motion.div>
-
-          {/* Services Icons */}
-          <motion.div
-            className={styles.serviceIcons}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-          >
-            {services.map((service, index) => (
-              <motion.div
-                key={index}
-                className={styles.serviceIcon}
-                whileHover={{ y: -5, scale: 1.1 }}
-                transition={{ type: 'spring', stiffness: 300 }}
-              >
-                <div className={styles.iconWrapper}>{service.icon}</div>
-                <span>{service.name}</span>
-              </motion.div>
-            ))}
           </motion.div>
         </div>
       </div>
